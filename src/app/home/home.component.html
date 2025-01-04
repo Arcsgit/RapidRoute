@@ -1,0 +1,76 @@
+<section class="main">
+    <div class="Delivery_Status">
+      <div class="text"><h1>Delivery Status</h1></div>
+      <div class="number">
+        <div class="statusBtn">Done<p class="num">{{doneDelivery}}</p></div>
+        <div class="statusBtn">Failed<p class="num">{{failedDelivery}}</p></div>
+      </div>
+    </div>
+    <button (click)="start()" style="width: fit-content; height: fit-content; color: white; font-size: 20px; padding: 5px;">START</button>
+    <div class="Vechicle_status">
+      <div class="text"><h1>Add</h1></div>
+      <div class="status">
+        <div class="statusBtn">
+          <button class="addBtn" (click)="addOrder('order-page')">
+              Order
+          </button>
+        </div>
+        <div class="statusBtn">
+          <button class="addBtn">
+              Store
+          </button>
+        </div>
+        <div class="statusBtn">
+          <button class="addBtn">
+              Vehicle
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <div class="one">
+    <table style="width:60%">
+      <tr >
+        <th style="width: 10%;">Sr.no</th>
+        <th style="width: 27%;">Order id</th>
+        <th style="width: 25%;">Vehicle</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>234567</td>
+        <td>DONE</td>
+        <td>
+          <div class="two">
+            <button class="btn">CANCEL</button>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>234567</td>
+        <td>Started</td>
+        <td>
+          <div class="two">
+            <button class="btn">CANCEL</button>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>234567</td>
+        <td>PICKED</td>
+        <td>
+          <div class="two">
+            <button class="btn">
+              <!-- <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7h16m-10 4v6m4-6v6M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2l1-12M9 7V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"/></svg> -->
+              CANCEL
+            </button>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+  
+  
+

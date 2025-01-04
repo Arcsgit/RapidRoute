@@ -1,0 +1,22 @@
+<div class="row">
+    <form #newItem="ngForm" (ngSubmit)="confirmBtn(newItem.value)">
+        <label for="name">Item : </label>
+        <select name="name" ngModel>
+            <option value="" disabled selected>Select item</option>
+            @for (item of allItems; track $index) {
+                <option [ngValue]="item.getItemName()">{{item.getItemName()}}</option>
+            }
+        </select>
+
+        <label for="qty">Quantity : </label>
+        <select name="qty" ngModel>
+            <option value="" disabled selected>Select qty</option>
+            @for (num of maxQty; track $index) {
+                <option [ngValue]="num">{{num}}</option>
+            }
+        </select>
+        @if (!click) {
+            <input type="submit" value="Confirm">
+        }
+    </form>
+</div>

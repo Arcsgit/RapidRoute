@@ -1,0 +1,30 @@
+
+.row {
+    border: 1px solid wheat;
+    margin: 2% 12%;
+    padding: 2%;
+    width: 72%;
+    border-radius: 40px;
+}
+
+form label {
+    color: white;
+}
+
+select, select option {
+    color: white;
+}
+
+label[for="qty"] {
+    margin-left: 5%;
+}
+
+input[type=submit] {
+    background-color: #04AA6D;
+    border: none;
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    margin-left: 7%;
+    cursor: pointer;
+}
