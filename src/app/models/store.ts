@@ -25,14 +25,22 @@ export class Store {
         //     if(!found)
         //         this.storeItems.push(new StoreItems('Book', 10)); //Name, quantity
         // }
-        if(name === 'Wallmart') {
-            this.storeItems.push(new StoreItems('Rice', 10)); //Name, quantity
-            this.storeItems.push(new StoreItems('Book', 10)); //Name, quantity
-        }
-        else {
-            this.storeItems.push(new StoreItems('Book', 10)); //Name, quantity
-            this.storeItems.push(new StoreItems('Pen', 10)); //Name, quantity
-        }
+        this.storeItems.push(new StoreItems('Pen', 30)); //Name, quantity
+        this.storeItems.push(new StoreItems('Toothbrush', 30)); //Name, quantity
+        this.storeItems.push(new StoreItems('Book', 30)); //Name, quantity
+        this.storeItems.push(new StoreItems('Onion', 30)); //Name, quantity
+        this.storeItems.push(new StoreItems('Biscuit', 30)); //Name, quantity
+        this.storeItems.push(new StoreItems('Tomato', 30)); //Name, quantity
+        this.storeItems.push(new StoreItems('Carrot', 30)); //Name, quantity
+        this.storeItems.push(new StoreItems('Milk', 30)); //Name, quantity
+        this.storeItems.push(new StoreItems('Apple', 30)); //Name, quantity
+        this.storeItems.push(new StoreItems('Banana', 30)); //Name, quantity
+        this.storeItems.push(new StoreItems('Orange', 30)); //Name, quantity
+        this.storeItems.push(new StoreItems('Grapes', 30)); //Name, quantity
+        this.storeItems.push(new StoreItems('Wheat', 30)); //Name, quantity
+        this.storeItems.push(new StoreItems('Rice', 30)); //Name, quantity
+        this.storeItems.push(new StoreItems('Chips', 30)); //Name, quantity
+        this.storeItems.push(new StoreItems('Pineapple', 30)); //Name, quantity
     }
     public getStoreID(): number { return this.storeID; }
     public getStoreName(): string { return this.storeName; }

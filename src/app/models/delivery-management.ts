@@ -23,17 +23,21 @@ export class DeliveryManagement {
     private mainNode: number = 0;
     private numNodes: number;
     constructor(nodes: number, startNode: number) {
-        console.log("dm construtor");
+        // console.log("dm construtor");
         this.numNodes = nodes;
         this.mainNode = startNode;
         this.adjacencyMatrix = Array(nodes).fill(0).map(() => Array(nodes).fill(0));
-        this.addPath(0, 1, 2.5);
-        this.addPath(1, 2, 1.8);
-        this.addPath(2, 3, 3.0);
-        this.addPath(1, 4, 2.0);
-        this.addPath(4, 3, 1.5);
-        this.addPath(0, 5, 4.0);
-        this.addPath(5, 3, 2.2);
+        this.addPath(1, 2, 3.5);
+        this.addPath(2, 3, 3.7);
+        this.addPath(3, 4, 1.3);
+        this.addPath(0, 4, 6.2);
+        this.addPath(3, 4, 1.3);
+        this.addPath(3, 5, 2.4);
+        this.addPath(6, 7, 5.7);
+        this.addPath(0, 7, 5.1);
+        this.addPath(1, 6, 7.1);
+        this.addPath(2, 5, 6.9);
+        
     }
 
     public addOrder(newOrder: Order): Result|null {

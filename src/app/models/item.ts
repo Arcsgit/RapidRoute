@@ -21,6 +21,7 @@ export class Item {
         Item.itemList.set("Wheat", new Item('Wheat'));
         Item.itemList.set("Rice", new Item('Rice'));
         Item.itemList.set("Chips", new Item('Chips'));
+        Item.itemList.set("Pineapple", new Item('Pineapple'));
     }
     public static getItemByName(name: string): Item|undefined {
         return Item.itemList.get(name);

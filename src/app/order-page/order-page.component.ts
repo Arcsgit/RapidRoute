@@ -26,7 +26,7 @@ interface Result {
 
 export class OrderPageComponent {
 
-  obj: DeliveryManagement = new DeliveryManagement(6,0);
+  obj: DeliveryManagement = new DeliveryManagement(8,0);
 
   path: Result|null = null;
   res: boolean = false;
@@ -75,7 +75,7 @@ export class OrderPageComponent {
   
   displayResult(): void {
     this.obj.addStore('Wallmart',2,2);
-    this.obj.addStore('Jiomart',4,1);
+    this.obj.addStore('Jiomart',6,1);
     this.obj.addVehicle(0);
     this.obj.addVehicle(0);
     this.order.destination = this.destination;
