@@ -138,7 +138,10 @@ input[type=submit] {
 .orderBtn {
   margin-bottom: 8%;
   position: relative;
-  left: 57vw;
+  width: 80%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
 }
 
 .orderBtn label {

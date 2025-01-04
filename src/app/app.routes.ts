@@ -13,7 +13,7 @@ export const routes: Routes = [
     },
     {
         path: '',
-        component: OrderPageComponent
+        component: HomeComponent
     }
     
 ];
