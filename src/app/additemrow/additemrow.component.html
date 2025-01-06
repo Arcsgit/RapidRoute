@@ -1,18 +1,18 @@
 <div class="row">
-    <form #newItem="ngForm" (ngSubmit)="confirmBtn(newItem.value)">
+    <form (submit)="confirmBtn($event)">
         <label for="name">Item : </label>
-        <select name="name" ngModel>
+        <select name="name" [disabled]="disable">
             <option value="" disabled selected>Select item</option>
             @for (item of allItems; track $index) {
-                <option [ngValue]="item.getItemName()">{{item.getItemName()}}</option>
+                <option [value]="item.getItemName()">{{item.getItemName()}}</option>
             }
         </select>
 
         <label for="qty">Quantity : </label>
-        <select name="qty" ngModel>
+        <select name="qty" [disabled]="disable">
             <option value="" disabled selected>Select qty</option>
             @for (num of maxQty; track $index) {
-                <option [ngValue]="num">{{num}}</option>
+                <option [value]="num">{{num}}</option>
             }
         </select>
         @if (!click) {

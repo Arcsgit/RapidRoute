@@ -1,20 +1,10 @@
-@if (res) {
-    <div class="result">
-        Total Distance : &nbsp;&nbsp;&nbsp;<span>{{path?.totalDistance?.toFixed(1)}} km</span>
-        <br>
-        Path : &nbsp;&nbsp;&nbsp;<span>{{path?.nodes?.join(' -> ')}}</span>
-        <br>
-        Item picked at store : &nbsp;&nbsp;&nbsp;<span>{{path?.store}}</span>
-    </div>
-}
-
 <div class="main">
     <h1>Order Items</h1>
     <hr>
     <div>
         <div #reusableComponent></div>
         <div>
-            <button  class="addBtn" (click)="addComponent()">Add Item</button>
+            <button class="addBtn" (click)="addItem()">Add Item</button>
         </div>
     </div>
 </div>
@@ -22,11 +12,8 @@
 @if (order.getOrderItems().length > 0) {
     <div class="orderBtn">
         <label for="dest">Destination : </label>
-        <input type="number" [(ngModel)]="destination" name="dest">
-        <!-- <button class="btn" (click)="placeOrder()" [routerLink]="['/home']" [state]="{newOrder:order, newDest:destination}">
-            <span> Place Order </span>
-        </button> -->
-        <button class="btn" (click)="displayResult()">
+        <input type="number" min="0" max="7" [(ngModel)]="destination" name="dest">
+        <button class="btn" (click)="placeOrder()" [routerLink]="['/home']" [state]="{newOrder:order}">
             <span> Place Order </span>
         </button>
     </div>

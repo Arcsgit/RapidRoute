@@ -8,25 +8,19 @@ interface Path {
     totalDistance: number;
 }
 
-interface Result {
-    nodes: number[];
-    totalDistance: number;
-    store: number;
-}
-
 export class DeliveryManagement {
     public orders: Order[] = [];
     public stores: Store[] = [];
     public vehicles: Vehicle[] = [];
 
     private adjacencyMatrix: number[][];
-    private mainNode: number = 0;
+    private mainNode: number;
     private numNodes: number;
-    constructor(nodes: number, startNode: number) {
-        // console.log("dm construtor");
-        this.numNodes = nodes;
-        this.mainNode = startNode;
-        this.adjacencyMatrix = Array(nodes).fill(0).map(() => Array(nodes).fill(0));
+
+    constructor(numNodes: number, mainNode: number) {
+        this.numNodes = numNodes;
+        this.mainNode = mainNode;
+        this.adjacencyMatrix = Array(numNodes).fill(0).map(() => Array(numNodes).fill(0));
         this.addPath(1, 2, 3.5);
         this.addPath(2, 3, 3.7);
         this.addPath(3, 4, 1.3);
@@ -40,18 +34,12 @@ export class DeliveryManagement {
         
     }
 
-    public addOrder(newOrder: Order): Result|null {
-        var items: OrderItem[] = [];
-        if(newOrder.getOrderItems)
-            items = newOrder.getOrderItems();
-        let destination: number = newOrder.destination;
+    public addOrder(newOrder: Order): Order|null {
+        var items: OrderItem[] = newOrder?.getOrderItems();
+        let destination: number = newOrder.getDestination();
         let validStores: Store[] = [];
         var itemsCount: number = items.length;
-
-        // console.log("dm inside : ");
-        // console.log(this.stores);
-        // console.log(this.vehicles);
-
+        
         // Finding all stores having all items
         for(let store of this.stores) {
             itemsCount = items.length;
@@ -72,17 +60,14 @@ export class DeliveryManagement {
             validStores = Array.from(new Set(validStores));
         else {
             console.log("Items not found in stores");
+            newOrder.setStatus(0);
+            this.orders.push(newOrder);
             return null;
         }
-        // console.log(validStores);
 
         // Finding shortest store from destination
         const sortedStores = this.sortStoresByDistance(validStores, destination);
-        // newOrder.setStore(sortedStores[0]);
-        // console.log(sortedStores);
-
-        // const result = this.findNearestVehiclePathToStore(this.vehicles, sortedStores[0]);
-        // console.log(result);
+        newOrder.setStore(sortedStores[0]);
 
         let bestPath: Path = {
             nodes: [],
@@ -102,17 +87,11 @@ export class DeliveryManagement {
                 bestPath.nodes = bestPath.nodes.concat(toDestination.nodes.slice(1));
             }
         }
-
-        // console.log(`Total distance: ${bestPath.totalDistance.toFixed(1)} km`);
-        // console.log(`Path: ${bestPath.nodes.join(' -> ')}`);
-        // console.log(`Item pickup at store: ${bestStore}`);
-
-        let res: Result = {
-            nodes: bestPath.nodes,
-            totalDistance: bestPath.totalDistance,
-            store: bestStore
-        };
-        return res;
+        
+        newOrder.setPath(bestPath);
+        newOrder.setStatus(1);
+        this.orders.push(newOrder);
+        return newOrder;
     }
 
     public addStore(name:string, location: number, itemsCount: number): void {
@@ -122,7 +101,6 @@ export class DeliveryManagement {
     public addVehicle(location: number): void {
         this.vehicles.push(new Vehicle(location));
     }
-
 
     private addPath(from: number, to: number, distance: number): void {
         this.adjacencyMatrix[from][to] = distance;
@@ -158,24 +136,6 @@ export class DeliveryManagement {
         }
 
         return path;
-    }
-    private findNearestVehiclePathToStore(vehicles: Vehicle[], store: Store): { vehicleId: number|undefined, path: Path } {
-        let bestVehicleId;
-        let bestPath: Path = {
-            nodes: [],
-            totalDistance: Number.MAX_VALUE
-        };
-
-        for (const vehicle of vehicles) {
-            const currentPath = this.findPath(vehicle.getVehicleLocation(), store.getStoreLocation());
-            
-            if (currentPath.totalDistance < bestPath.totalDistance) {
-                bestPath = currentPath;
-                bestVehicleId = vehicle.getVehicleId();
-            }
-        }
-
-        return { vehicleId: bestVehicleId, path: bestPath };
     }
 
     sortStoresByDistance(stores: Store[], fromLocation: number): Store[] {

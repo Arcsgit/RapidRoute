@@ -12,11 +12,13 @@ export class OrderItem {
         this.srno = OrderItem.generateSr();
         this.item = Item.getItemByName(name);
         this.qty = qty;
-        // console.log('orderitemconstructor : item = '+this.item?.displayItem());
     }
 
     public getItemId(): number|undefined {
         return this.item?.getItemId();
+    }
+    public setQty(qty: number) {
+        this.qty = qty;
     }
     public getQty(): number {
         return this.qty;

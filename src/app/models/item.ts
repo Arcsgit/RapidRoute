@@ -10,7 +10,7 @@ export class Item {
         Item.itemList.set("Toothbrush", new Item('Toothbrush'));
         Item.itemList.set("Book", new Item('Book'));
         Item.itemList.set("Biscuit", new Item('Biscuit'));
-        Item.itemList.set("Onion',", new Item('Onion',));
+        Item.itemList.set("Onion", new Item('Onion',));
         Item.itemList.set("Tomato", new Item('Tomato'));
         Item.itemList.set("Carrot", new Item('Carrot'));
         Item.itemList.set("Milk", new Item('Milk'));

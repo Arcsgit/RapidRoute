@@ -18,22 +18,16 @@ interface Result {
 @Component({
   selector: 'app-order-page',
   standalone: true,
-  imports: [ FormsModule, RouterOutlet, RouterLink ],
+  imports: [ FormsModule, RouterLink ],
   templateUrl: './order-page.component.html',
   styleUrl: './order-page.component.css'
 })
 
-
 export class OrderPageComponent {
-
-  obj: DeliveryManagement = new DeliveryManagement(8,0);
-
-  path: Result|null = null;
-  res: boolean = false;
   order: Order = new Order([], 0);
-  // orderItems: OrderItem[] = [];
   destination: number = 0;
 
+  // For display purposes only
   allItems: Item[] = Item.getAllItems();
   maxQty: number[] = [...Array(20).keys()].map(i => i + 1);
 
@@ -58,32 +52,24 @@ export class OrderPageComponent {
     this.destroy$.complete();
   }
   
-  addComponent() {
+  addItem(): void {
     let componentRef = this.container.createComponent(AdditemrowComponent);
     componentRef.instance.dataEvent.subscribe((data:OrderItem) => {
-      // this.orderItems.push(data);
-      this.order.getOrderItems().push(data);
-      console.log(this.order);
+      if(data.getItem() != undefined && !Number.isNaN(data.getQty())) {
+        for(let item of this.order.getOrderItems()) {
+          if(item.getItemId() == data.getItemId()) {
+            item.setQty(item.getQty() + data.getQty());
+            return;
+          }
+        }
+        this.order.getOrderItems().push(data);
+      }
     });
-    
   }
 
   placeOrder(): void {
-    // this.router.navigateByUrl('/home');
-  }
-
-  
-  displayResult(): void {
-    this.obj.addStore('Wallmart',2,2);
-    this.obj.addStore('Jiomart',6,1);
-    this.obj.addVehicle(0);
-    this.obj.addVehicle(0);
-    this.order.destination = this.destination;
-    this.path = this.obj.addOrder(this.order);
-    console.log(`Total distance: ${this.path?.totalDistance.toFixed(1)} km`);
-    console.log(`Path: ${this.path?.nodes.join(' -> ')}`);
-    console.log(`Item pickup at store: ${this.path?.store}`);
-    this.res = true;
+    this.order.setDestination(this.destination);
+    console.log(this.order);
   }
 
 }

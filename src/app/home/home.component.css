@@ -1,208 +1,172 @@
 * {
-    font-family: 'Clash Grotesk', 'sans-serif';
-    color: rgb(255, 255, 230);
-    font-size: 25px;
-  }
-  
-  .important
-  {
-  display: flex;
-  }
-  .one
-  {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  }
-  .two
-  {
-  width: 70%;
-  text-align: center;
-  
-  }
-  
-  
-  .main
-  {
+  font-family: 'Clash Grotesk', 'sans-serif';
+  color: rgb(255, 255, 230);
+  font-size: 25px;
+}
+
+.main {
   background-color: whitesmoke;
   display: flex;
   background-color: black;
-  
-  }
-  .Delivery_Status
-  {
-    margin-left: 50px;
-    margin-right: 25px;
-  }
-  .Vechicle_status
-  {
+
+}
+.Delivery_Status
+{
+  margin-left: 50px;
+  margin-right: 25px;
+}
+.Vechicle_status
+{
   margin-left: 25px;
   margin-right: 50px;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
   text-align: center;
-  }
-  
-  .Delivery_Status ,.Vechicle_status
-  {
-    width: 48%;
-    border-color: white;
-    border-radius: 4px;
-    border-style: double;
-    padding: 20px;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    text-align: center;
-    padding-top: 20px;
-    background-color: black;
-    color: white;
-    font-family: "Rubik Vinyl", serif;
-  
-  }
-  .text h1 {
-    font-size: 2rem;
-  }
-  .number, .status
-  {
-    margin: 10px;
-    display: flex;
-    padding-left: 5px;
-  }
-  .status
-  {
-  justify-content: center;
+}
+
+.Delivery_Status ,.Vechicle_status
+{
+  width: 48%;
+  border-color: white;
+  border-radius: 4px;
+  border-style: double;
+  padding: 20px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: center;
+  padding-top: 20px;
+  background-color: black;
+  color: white;
+  font-family: "Rubik Vinyl", serif;
+
+}
+.text h1 {
+  font-size: 2rem;
+}
+.number, .status
+{
+  margin: 10px;
   display: flex;
-  
-  }
-  .number
-  {
-  justify-content: center;
+  padding-left: 5px;
+}
+.status
+{
+justify-content: center;
+display: flex;
+
+}
+.number
+{
+justify-content: center;
+display: flex;
+
+}
+
+.statusBtn
+{
+  margin: 1% 3%;
+  width: 30%;
+  border-color: white;
+  border-radius: 4px;
+  border-style: double;
+  padding: 8px;
+
+}
+.oops
+{
+  letter-spacing: 2px;
+  font-family: "Rubik Vinyl", serif;
+  background-color: black;
   display: flex;
-  
-  }
-  
-  .statusBtn
-  {
-    margin: 1% 3%;
-    width: 30%;
-    border-color: white;
-    border-radius: 4px;
-    border-style: double;
-    padding: 8px;
-  
-  }
-  .oops
-  {
-    letter-spacing: 2px;
-    font-family: "Rubik Vinyl", serif;
-    background-color: black;
-    display: flex;
-  }
-  .no ,.id ,.progress 
-  {
-    padding: 10px;
-    width: 25%;
-    text-align: center;
-    border-color: crimson;
-    border-radius: 4px;
-    border-style: double;
-    height: 300px;
-    padding: 10px;
-    margin: 10px;
-  }
-  
-  table
-  {
-   box-shadow: 1px 1px 3px 3px rgb(255, 255, 230);
-   /* border-collapse:separate;  */
-    border-spacing: 0 15px;
-    padding: 0 10px;
-  }
-  
-  th
-  {
+}
+.no ,.id ,.progress 
+{
+  padding: 10px;
+  width: 25%;
+  text-align: center;
+  border-color: crimson;
+  border-radius: 4px;
+  border-style: double;
+  height: 300px;
+  padding: 10px;
+  margin: 10px;
+}
+
+
+.one {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8%;
+}
+table {
+  box-shadow: 1px 1px 3px 3px rgb(255, 255, 230);
+  border-spacing: 0 15px;
+  padding: 0 10px;
+}
+
+th {
   border: 1px solid white;
   border-collapse: collapse;
-  color: white;
   background-color: black;
   height: 50px;
-  }
-  td {
+}
+td {
   border: 1px solid whitesmoke;
   border-collapse: collapse;
-  color: white;
   background-color: black;
   padding: 4px;
-  }
-  tr {
-    margin: 2% 0;
-  }
-  table tr td:nth-child(4)
-  {
-  border: none;
-  display: flex;
-  justify-content: center;
-  
-  }
-  
-  .btn {
-  background-color: rgb(241, 59, 59);
-  border: none;
-  color: white;
-  padding: 10px;
-  font-size: 16px;
-  cursor: pointer;
-  width: 100%;
-  }
-  .btn:hover {
-  background-color: rgb(246, 10, 10);
-  }
+  text-align: center;
+  font-family: 'Nippo', sans-serif;
+
+}
+tr {
+  margin: 2% 0;
+}
+
 
 .addBtn {
-  width: 7.5em;
-  position: relative;
-  height: 2.5em;
-  border: 3px ridge #149CEA;
-  outline: none;
-  background-color: transparent;
-  color: rgb(255, 255, 233);
-  transition: 1s;
-  border-radius: 0.3em;
-  font-size: 20px;
-  font-weight: bold;
-  cursor: pointer;
+width: 7.5em;
+position: relative;
+height: 2.5em;
+border: 3px ridge #149CEA;
+outline: none;
+background-color: transparent;
+color: rgb(255, 255, 233);
+transition: 1s;
+border-radius: 0.3em;
+font-size: 20px;
+font-weight: bold;
+cursor: pointer;
 }
 
 .addBtn::after {
-  content: "";
-  position: absolute;
-  top: -10px;
-  left: 3%;
-  width: 95%;
-  height: 40%;
-  background-color: #212121;
-  transition: 0.5s;
-  transform-origin: center;
-  background-color: black;
+content: "";
+position: absolute;
+top: -10px;
+left: 3%;
+width: 95%;
+height: 40%;
+background-color: #212121;
+transition: 0.5s;
+transform-origin: center;
+background-color: black;
 }
 
 .addBtn::before {
-  content: "";
-  transform-origin: center;
-  position: absolute;
-  top: 80%;
-  left: 3%;
-  width: 95%;
-  height: 40%;
-  background-color: black;
-  transition: 0.5s;
+content: "";
+transform-origin: center;
+position: absolute;
+top: 80%;
+left: 3%;
+width: 95%;
+height: 40%;
+background-color: black;
+transition: 0.5s;
 }
 
 .addBtn:hover::before, .addBtn:hover::after {
-  transform: scale(0)
+transform: scale(0)
 }
 
 .addBtn:hover {
-  box-shadow: inset 0px 0px 25px #1479EA;
+box-shadow: inset 0px 0px 25px #1479EA;
 }

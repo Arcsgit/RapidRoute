@@ -13,14 +13,18 @@ import { OrderItem } from '../models/order-item';
 
 export class AdditemrowComponent {
   @Output() dataEvent = new EventEmitter<OrderItem>();
+
   click: boolean = false;
+  disable: boolean = false;
 
   allItems: Item[] = Item.getAllItems();
   maxQty: number[] = [...Array(20).keys()].map(i => i + 1);
 
   confirmBtn(item: any): void {
+    item.preventDefault();
     this.click = true;
-    this.dataEvent.emit(new OrderItem(item.name, item.qty));
+    this.dataEvent.emit(new OrderItem(item.target.name.value, parseInt(item.target.qty.value)));
+    this.disable = true;
   }
 
 }
