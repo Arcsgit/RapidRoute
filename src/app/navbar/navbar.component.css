@@ -1,5 +1,4 @@
-.navbar
-{
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -81,8 +80,14 @@ transform:scaleX(1);
 }
 
 @media only screen and (max-width: 450px) {
+  .logo {
+    font-size: 1.5rem;
+  }
   ul li {
-    margin: 0 5px;
+    margin: 0 0;
+  }
+  ul li a {
+    font-size: 80%;
   }
 }
 
