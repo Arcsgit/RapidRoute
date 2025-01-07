@@ -16,7 +16,7 @@ export class Store {
         this.storeItems.push(new StoreItems('Pen', 30)); //Name, quantity
         this.storeItems.push(new StoreItems('Toothbrush', 30)); //Name, quantity
         this.storeItems.push(new StoreItems('Book', 30)); //Name, quantity
-        // this.storeItems.push(new StoreItems('Onion', 30)); //Name, quantity
+        this.storeItems.push(new StoreItems('Onion', 30)); //Name, quantity
         this.storeItems.push(new StoreItems('Biscuit', 30)); //Name, quantity
         this.storeItems.push(new StoreItems('Tomato', 30)); //Name, quantity
         this.storeItems.push(new StoreItems('Carrot', 30)); //Name, quantity
