@@ -1,0 +1,69 @@
+.main {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+}
+
+.sub {
+    height: 92%;
+    width: 92%;
+    margin: 2%;
+    padding: 2%;
+    text-align: center;
+    /* border: 1px solid white; */
+    box-shadow: rgba(255, 255, 255, 0.4) 0px 2px 4px, 
+                rgba(255, 255, 255, 0.3) 0px 7px 13px -3px, 
+                rgba(255, 255, 255, 0.2) 0px -3px 0px inset;
+}
+.sub h1 { 
+    color: rgb(255, 255, 233); 
+    font-family: 'Hoover', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 2%;
+}
+.sub h3 { 
+    color: rgb(255, 255, 233); 
+    font-family: 'Clash Grotesk', 'sans-serif';
+}
+
+button {
+    color: white;
+    text-decoration: none;
+    border: none;
+    background: none;
+    margin-top: 5%;
+    cursor: pointer;
+}
+button a {
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    font-size: 25px;
+    text-decoration: none;
+    color: whitesmoke;
+}
+button::before { margin-left: auto; }
+
+button::after, button::before {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: greenyellow;
+    display: block;
+    transition: 0.5s;
+}
+
+button:hover::after, button:hover::before { width: 100%; }
+
+@media only screen and (max-width: 450px) {
+    .main {
+        flex-wrap: wrap;
+        width: 80%;
+    }
+    .sub {
+        margin-top: 20%;
+    }
+    
+}

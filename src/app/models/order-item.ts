@@ -5,7 +5,7 @@ export class OrderItem {
     private item: Item|undefined;
     private qty: number;
 
-    private static sr: number = -1;
+    private static sr: number = 0;
     private static generateSr(): number { return ++OrderItem.sr; }
 
     constructor(name: string, qty: number) {

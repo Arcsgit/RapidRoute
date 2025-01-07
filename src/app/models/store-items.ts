@@ -15,10 +15,10 @@ export class StoreItems {
     }
     
     public getSrno(): number { return this.srno; }
-    public setItemQty(qty: number): void { 
-        this.qty += qty;
-    }
-    public getQty(): number { return this.qty; }
+    public getItem(): Item|undefined { return this.item; }
     public getItemName(): string|undefined { return this.item?.getItemName(); }
     public getItemId(): number|undefined { return this.item?.getItemId(); }
+    public setQty(qty: number): void { this.qty = qty; }
+    public getQty(): number { return this.qty; }
+
 }

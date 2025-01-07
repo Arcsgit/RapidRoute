@@ -3,22 +3,25 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: 1%;
   margin: 0 3%;
-  width: 93%;
+  width: 92%;
   box-shadow: rgba(255, 255, 230, 0.4) 0px 2px 4px, 
   rgba(255, 255, 230, 0.3) 0px 7px 13px -3px, 
   rgba(255, 255, 230, 0.2) 0px -3px 0px inset;
 }
 
-.logo
-{
- color: rgb(255, 255, 230);
+.logo {
  font-family: 'Tanker', sans-serif;
  font-size: 2rem;
  margin-left: 2%;
  letter-spacing: 2px;
 }
+.logo a {
+  text-decoration: none;
+  color: rgb(255, 255, 230);
+}
+
 ul{
 margin:0;
 padding:0;
@@ -77,5 +80,9 @@ transform-origin:left;
 transform:scaleX(1);
 }
 
-
+@media only screen and (max-width: 450px) {
+  ul li {
+    margin: 0 5px;
+  }
+}
 

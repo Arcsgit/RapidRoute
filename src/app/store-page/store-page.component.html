@@ -1,0 +1,60 @@
+@if(wrngPassDiv) {
+    <div class="wrngPass">{{message}}</div>
+}
+
+@if (is_Password) {
+    <div class="card">
+        <form class="pass" (submit)="checkPassword()">
+        <div class="terminal-body">
+            <div class="command-line">
+                <span class="prompt">password:</span>
+                <div class="input-wrapper">
+                    <input type="password" class="input-field" placeholder="Enter password" name="password" [(ngModel)]="password"/>
+                </div>
+            </div>
+            <button class="button" type="submit">
+                Enter
+                <span></span><span></span><span></span><span></span>
+            </button>
+        </div>
+        </form>
+    </div>
+}
+
+@if (is_Main) {
+    <div class="main">
+        <h1>Order Items</h1>
+        <hr>
+        <form>
+            <div class="subMain">
+                <div class="sub">
+                    <label for="name">Name &nbsp;: </label>
+                    <div class="form">
+                        <input class="input" placeholder="Store name" type="text" id="name" name="name" [(ngModel)]="name">
+                        <span class="input-border"></span>
+                    </div>
+                </div>
+                <div class="sub">
+                    <label for="location">Location &nbsp;: </label>
+                    <div class="form">
+                        <input class="input" placeholder="Location" type="number" id="location" name="location" min="0" max="7" [(ngModel)]="location">
+                        <span class="input-border"></span>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <div #reusableComponent style="margin-top: 4%;"></div>
+        <div>
+            <button class="addBtn" (click)="addItem()">Add Item</button>
+        </div>
+    </div>
+    @if (click) {
+        <div class="finalBtn">
+            <button class="btn" (click)="addStore()" [routerLink]="['/home']" [state]="{newStore:newStore}">
+                <span> Place Order </span>
+            </button>
+        </div>
+    }
+}
+

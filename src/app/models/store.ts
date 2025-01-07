@@ -13,18 +13,6 @@ export class Store {
         this.storeID = Store.generateId();
         this.storeName = name;
         this.storeLocation = location;
-        // for(let i = 0; i < itemsCount; i++) {
-        //     let found: boolean = false;
-        //     for(let j=0; j < this.storeItems.length; j++) {
-        //         if(this.storeItems[j].getItemName() === 'Book') {
-        //             found = true;
-        //             this.storeItems[j].setItemQty(10);
-        //             break;
-        //         }
-        //     }
-        //     if(!found)
-        //         this.storeItems.push(new StoreItems('Book', 10)); //Name, quantity
-        // }
         this.storeItems.push(new StoreItems('Pen', 30)); //Name, quantity
         this.storeItems.push(new StoreItems('Toothbrush', 30)); //Name, quantity
         this.storeItems.push(new StoreItems('Book', 30)); //Name, quantity
@@ -43,7 +31,10 @@ export class Store {
         this.storeItems.push(new StoreItems('Pineapple', 30)); //Name, quantity
     }
     public getStoreID(): number { return this.storeID; }
+    public setStoreName(value: string) { this.storeName = value; }
     public getStoreName(): string { return this.storeName; }
+    public setStoreLocation(value: number) { this.storeLocation = value; }
     public getStoreLocation(): number { return this.storeLocation; }
+    public setStoreItems(items: StoreItems[]): void { this.storeItems = items; }
     public getStoreItems(): StoreItems[] { return this.storeItems; }
 }

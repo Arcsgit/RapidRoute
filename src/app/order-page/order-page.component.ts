@@ -4,10 +4,9 @@ import { Item } from '../models/item';
 import { OrderItem } from '../models/order-item';
 import { AdditemrowComponent } from '../additemrow/additemrow.component';
 import { Subject, takeUntil } from 'rxjs';
-import { Router, RouterOutlet, Event, RouterLink } from '@angular/router'; 
+import { Router, Event, RouterLink } from '@angular/router'; 
 import { NavigationEnd } from '@angular/router';
 import { Order } from '../models/order';
-import { DeliveryManagement } from '../models/delivery-management';
 
 interface Result {
   nodes: number[];
@@ -27,7 +26,6 @@ export class OrderPageComponent {
   order: Order = new Order([], 0);
   destination: number = 0;
 
-  // For display purposes only
   allItems: Item[] = Item.getAllItems();
   maxQty: number[] = [...Array(20).keys()].map(i => i + 1);
 
@@ -67,10 +65,7 @@ export class OrderPageComponent {
     });
   }
 
-  placeOrder(): void {
-    this.order.setDestination(this.destination);
-    console.log(this.order);
-  }
+  placeOrder(): void { this.order.setDestination(this.destination); }
 
 }
 

@@ -31,10 +31,25 @@ footer
   font-family: 'Hoover', sans-serif;
 }
 
-.logod, 
-.copy
-{
-  width: 33%;
+.logod, .copy { width: fit-content; }
+
+.blink1 { animation: blinker1 1s infinite; }
+.blink2 { animation: blinker2 1s infinite; }
+@keyframes blinker1 { 
+  from { opacity: 1.0; }
+  50% { opacity: 0.5; }
+  to { opacity: 1.0; }
+}
+@keyframes blinker2 { 
+  from { opacity: 0.5; }
+  50% { opacity: 1.0; }
+  to { opacity: 0.5; }
+}
+
+a {
+  text-decoration: none;
+  color: rgb(255, 255, 230);
+  font-family: 'Kalam', cursive;
 }
 
 .socials-container{
@@ -102,3 +117,11 @@ footer
   opacity: 1;
 }
 
+@media only screen and (max-width: 450px) {
+  .logod {
+    display: none;
+  }
+  .copy {
+    margin: auto;
+  }
+}

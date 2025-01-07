@@ -1,0 +1,42 @@
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    width: 100vw;
+    background-color: #f4f4f4;
+}
+svg {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    width: 500px;
+    height: 400px;
+}
+.node {
+    fill: white;
+    stroke: black;
+    stroke-width: 1.5;
+}
+.text {
+    fill: black;
+    font-size: 12px;
+    text-anchor: middle;
+    alignment-baseline: middle;
+}
+.distance {
+    font-size: 10px;
+    fill: black;
+    text-anchor: middle;
+}
+.store {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 450px) {
+    svg {
+        width: 500px;
+        height: 500px;
+    }
+}
+

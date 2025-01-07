@@ -21,16 +21,16 @@ export class DeliveryManagement {
         this.numNodes = numNodes;
         this.mainNode = mainNode;
         this.adjacencyMatrix = Array(numNodes).fill(0).map(() => Array(numNodes).fill(0));
-        this.addPath(1, 2, 3.5);
-        this.addPath(2, 3, 3.7);
-        this.addPath(3, 4, 1.3);
         this.addPath(0, 4, 6.2);
-        this.addPath(3, 4, 1.3);
+        this.addPath(0, 2, 7.1);
+        this.addPath(0, 6, 5.3);
+        this.addPath(1, 2, 3.5);
+        this.addPath(1, 7, 5.1);
+        this.addPath(2, 4, 3.7);
         this.addPath(3, 5, 2.4);
+        this.addPath(3, 4, 1.3);
         this.addPath(6, 7, 5.7);
-        this.addPath(0, 7, 5.1);
-        this.addPath(1, 6, 7.1);
-        this.addPath(2, 5, 6.9);
+        this.addPath(5, 6, 3.5);
         
     }
 
@@ -94,10 +94,10 @@ export class DeliveryManagement {
         return newOrder;
     }
 
-    public addStore(name:string, location: number, itemsCount: number): void {
-        this.stores.push(new Store(name, location, itemsCount));
+    public addStore(newStore: Store): void {
+        this.stores.push(newStore);
     }
-
+    
     public addVehicle(location: number): void {
         this.vehicles.push(new Vehicle(location));
     }

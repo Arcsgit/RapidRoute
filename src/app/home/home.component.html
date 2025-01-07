@@ -1,48 +1,56 @@
+@if (vehicleAdd) {
+  <div class="wrngPass">Vehicle Added</div>
+}
+
+<div class="heading">Fastest routes, Seamless deliveries</div>
+
 <section class="main">
-    <div class="Delivery_Status">
-      <div class="text"><h1>Delivery Status</h1></div>
-      <div class="number">
-        <div class="statusBtn">Done<p class="num">{{getDone}}</p></div>
-        <div class="statusBtn">Failed<p class="num">{{getFailed}}</p></div>
-      </div>
+  <div class="subMain">
+    <h1>Delivery Status</h1>
+    <div class="box">
+      <div class="statusBtn">Done<p>{{getDone}}</p></div>
+      <div class="statusBtn">Failed<p>{{getFailed}}</p></div>
     </div>
-    
-    <div class="Vechicle_status">
-      <div class="text"><h1>Add</h1></div>
-      <div class="status">
-        <div class="statusBtn">
-          <button class="addBtn" [routerLink]="['/order-page']">Order</button>
-        </div>
-        <div class="statusBtn">
-          <button class="addBtn">Store</button>
-        </div>
-        <div class="statusBtn">
-          <button class="addBtn">Vehicle</button>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <div class="one">
-    <table style="width:80%">
-      <tbody>
-        <tr>
-          <th style="width: 10%;">Order id</th>
-          <th style="width: 12%;">Destination</th>
-          <th style="width: 7%;">Store</th>
-          <th style="width: 11%;">Distance</th>
-          <th style="width: 15;">Path</th>
-        </tr>
-        @for (item of getAllOrders(); track $index) {
-          <tr>
-            <td>{{item.getOrderId()}}</td>
-            <td>{{item.getDestination()}}</td>
-            <td>{{item.getStore()?.getStoreID() || 'null'}}</td>
-            <td>{{item.getPath()?.totalDistance?.toFixed(1) || 'null'}}</td>
-            <td>{{item.getPath()?.nodes?.join(' -> ') || 'null'}}</td>
-          </tr>
-        }
-      </tbody>
-    </table>
   </div>
-  
+  <div class="subMain">
+    <h1>Add</h1>
+    <div class="box">
+      <div class="statusBtn statusBtn2">
+        <button class="addBtn" [routerLink]="['/order-page']">Order</button>
+      </div>
+      <div class="statusBtn statusBtn2">
+        <button class="addBtn" [routerLink]="['/store-page']">Store</button>
+      </div>
+      <div class="statusBtn statusBtn2">
+        <button class="addBtn" (click)="addVehicle()">Vehicle</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="secretBtn" >
+<button (click)="secret()">secret</button>
+</div>
+<div class="one">
+  <table>
+    <tbody>
+      <tr>
+        <th>Order id</th>
+        <th>Destination</th>
+        <th>Store</th>
+        <th>Distance</th>
+        <th>Path</th>
+      </tr>
+      @for (item of getAllOrders(); track $index) {
+        <tr>
+          <td>{{item.getOrderId()}}</td>
+          <td>{{item.getDestination()}}</td>
+          <td>{{item.getStore()?.getStoreID() || 'null'}}</td>
+          <td>{{item.getPath()?.totalDistance?.toFixed(1) || 'null'}}</td>
+          <td>{{item.getPath()?.nodes?.join(' -> ') || 'null'}}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
+
