@@ -64,11 +64,11 @@ export class DeliveryManagement {
             this.orders.push(newOrder);
             return null;
         }
-
+        
         // Finding shortest store from destination
         const sortedStores = this.sortStoresByDistance(validStores, destination);
         newOrder.setStore(sortedStores[0]);
-
+        
         let bestPath: Path = {
             nodes: [],
             totalDistance: Number.MAX_VALUE
@@ -76,13 +76,13 @@ export class DeliveryManagement {
         let bestStore: number = -1;
 
         for(let i=0; i<sortedStores.length; i++) {
-            let toStore: Path = this.dijkstra2(this.mainNode, sortedStores[i].getStoreID());
-            let toDestination: Path = this.dijkstra2(sortedStores[i].getStoreID(), destination);
+            let toStore: Path = this.dijkstra2(this.mainNode, sortedStores[i].getStoreLocation());
+            let toDestination: Path = this.dijkstra2(sortedStores[i].getStoreLocation(), destination);
             let totalDistance: number = toStore.totalDistance + toDestination.totalDistance;
 
             if (totalDistance < bestPath.totalDistance) {
                 bestPath.totalDistance = totalDistance;
-                bestStore = sortedStores[i].getStoreID();
+                bestStore = sortedStores[i].getStoreLocation();
                 bestPath.nodes = toStore.nodes;
                 bestPath.nodes = bestPath.nodes.concat(toDestination.nodes.slice(1));
             }

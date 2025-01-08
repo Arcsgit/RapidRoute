@@ -45,7 +45,7 @@
         <tr>
           <td>{{item.getOrderId()}}</td>
           <td>{{item.getDestination()}}</td>
-          <td>{{item.getStore()?.getStoreID() || 'null'}}</td>
+          <td>{{item.getStore()?.getStoreLocation() || 'null'}}</td>
           <td>{{item.getPath()?.totalDistance?.toFixed(1) || 'null'}}</td>
           <td>{{item.getPath()?.nodes?.join(' -> ') || 'null'}}</td>
         </tr>
